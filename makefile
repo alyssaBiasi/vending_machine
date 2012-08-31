@@ -7,13 +7,13 @@
 ##############################################################################
 
 
-CFLAGS = -Wall -ansi -pedantic
+CFLAGS = -gstabs -Wall -ansi -pedantic
 HFILES = vm_options.h vm_utility.h vm.h
 CFILES = vm.c vm_utility.c vm_options.c structFunctions.c
 OFILES = vm.o vm_utility.o vm_options.o structFunctions.o
 
 all: structFunctions.o vm_options.o vm_utility.o vm.o
-	gcc $(CFLAGS) -gstabs $(OFILES) -o vm
+	gcc $(CFLAGS) $(OFILES) -o vm
 
 structFunctions.o: structFunctions.c $(HFILES)
 	gcc $(CFLAGS) -c structFunctions.c
